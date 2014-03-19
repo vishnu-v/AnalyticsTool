@@ -7,6 +7,12 @@
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application", "home" %>
     <%= csrf_meta_tags %>
+    <script type="text/javascript">
+    function getip(json){
+       client_ip = json.ip
+    }
+    </script>
+    <script type="text/javascript" src="http://jsonip.appspot.com/?callback=getip"></script>
   </head>
   <body>
     <header>
@@ -17,4 +23,5 @@
        <%= yield %>
     </main>
   </body>
+  
 </html>
