@@ -8,11 +8,10 @@ jQuery(document).ready(function() {
 
 var incrementCount = function() {
 
-    page = findPath();
-    if page = "dashboard" return;
+    page = findPage();
+    if(page == "dashboard") return;
     ip = "127.0.0.1";
     browser = browserDetection();
-    alert("incrementing count")
     jQuery.ajax({
             type: "post",
             async: true,
@@ -25,13 +24,12 @@ var incrementCount = function() {
             },
             url: '/send_to_analytics',
             success: function(data) {
-                alert("Count added !!!");
             }
         });
 
 };
 
-var findPath = function() {
+var findPage = function() {
     var file = window.location.pathname;
     n = file.lastIndexOf('/');
     if (n >= 0) {

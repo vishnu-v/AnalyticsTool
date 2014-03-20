@@ -9,6 +9,8 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   match 'about_us' => 'home#about_us', :as => :about_us
   match 'contact_us' => 'home#contact_us', :as => :contact_us
   match 'dashboard' => 'dashboard#index', :as => :dashboard
+  match 'pages_list' => 'dashboard#pages_list', :as => :pages_list
   match 'send_to_analytics' => 'visits#send_to_analytics', :as => :send_to_analytics
+  match 'dashboard_data' => 'dashboard#dashboard_data', :as => :dashboard_data
 
 end

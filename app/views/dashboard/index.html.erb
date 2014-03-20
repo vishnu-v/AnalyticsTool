@@ -1,1 +1,40 @@
 <h3>Dashboard</h3>
+
+<%= form_tag({ :action => 'dashboard_data'}, {:id => "dashboard" }) do %>
+
+<div id="sub_report_header">
+  <table border="0" class="table_list" style="width:100%;">
+    <tbody>
+    <th>
+      Show Analytics for:<br/>
+      <%=  select_tag :website_id, options_for_website(@website_list), {:onchange=> 'populatePages();',:class => 'select_class', :style=>'width: 100px;height:23px;'} -%>
+    </th>
+  
+    <th>
+    	<div class="form_element" id="select_page" style="text-align: center">
+      	Page:<br/>
+      	<%=  select_tag :page, options_for_pages(@page_list), {:class =>'select_class', :style=>'width: 110px;height:23px;', :disabled => true } -%>
+       </div>
+    </th>
+ 
+    <th>
+       Duration:<br>
+       <%=  select_tag :duration, options_for_duration(), {:class =>'select_class', :style=>'width: 110px;height:23px;'} -%>
+    </th>
+  
+
+    <th>
+      <input type="submit" id="report_gen" name="Generate Report" value ="Generate Report"/>
+    </th>
+  </tbody>
+
+
+  </table><br/>
+
+</div>
+
+<div id ="update_sub_report" style="display:none;">
+
+</div>
+
+<%end%>

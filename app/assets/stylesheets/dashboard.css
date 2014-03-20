@@ -1,0 +1,49 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table_list th {
+    white-space: normal;
+    border:0;
+}
+
+.table_list_sub_report th {
+    white-space: normal;
+    border:0;
+}
+
+.table_list { clear: both; border: 1px; }
+.table_list td, .table_list th {  padding: 4px 0px ; border: 1px solid #ccc; text-align: center;}
+.table_list th { background: #F0F0F0; font-weight: bold; color: #666; text-transform: uppercase; white-space: nowrap; vertical-align: middle }
+
+.table_list td.left-border, .table_list th.left-border {border: none; border-left: 1px solid #CCCCCC;}
+.table_list td.right-border, .table_list th.right-border {border: none; border-right: 1px solid #CCCCCC;}
+.table_list td.left-right-border, .table_list th.left-right-border {border: none; border-right: 1px solid #CCCCCC; border-left: 1px solid #CCCCCC;}
+.table_list td.no-border, .table_list th.no-border { border: none;}
+.table_list td.lower_border {border: 10px 0 0 0;}
+.select_class{width:100px;}
+
+ .table_list td, .table_list th { padding: 4px 2px;}
+ .table_list td {text-align: left; font-size:11px;}
+ .wider_select_class { width : 115px; font-size:10px; }
+ .table_list th {text-transform: none; font-size: 10px;}
+ .sub_center { padding-left:6px !important;}
+
+    .table_list td, .table_list th {
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+  .table_list td {
+    text-align: center;
+    font-size:11px;
+  }
+  .select_class {
+    font-size: 10px;
+  }
+  .table_list th {
+    text-transform: none;
+    font-size: 10px;
+  }
+
+
+
