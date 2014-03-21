@@ -1,0 +1,40 @@
+
+
+<div id ="dashboard_table_div" style ="max-height: 380px;"><br>
+  <%if @dashboard_data && @dashboard_data.size > 0 %>
+  <div><p> <%= "Found #{@dashboard_data.size} record(s)"%> </p> </div>
+  <table border="0" class="table_list scrollTable" id="dashboard_table" style="width:100%; border-bottom: 1px solid #CCCCCC;">
+  <thead class="fixedHeader">
+    <tr>
+      <th style="width:70px">Website</th>
+      <th style="width:70px">Page</th>
+      <th style="width:70px">Date </th>
+      <th style="width:110px">Visit Count</th>
+      <th style="width:110px">IP address</th>
+      <th style="width:110px">Browser</th>
+      <th style="width:150px">Device</th>
+    </tr>
+  </thead>
+
+  <tbody class="scrollContent">
+      <% @dashboard_data.each do |data| %>
+        <tr style="">
+          
+          <td class="left-border sub_center" style="width:70px;max-width:69px"><%= data[:website_id]%></td>
+          <td class="left-border sub_center" style="width:70px;max-width:69px"><%= data[:page]  %></td>
+          <td class="left-border sub_center" style="width:110px;max-width:109px"><%= data[:visit_date] %></td>
+          
+          <td class="left-border sub_center" style="width:110px;max-width:109px"><%= data[:visit_count] %></td>
+          <td class="left-border sub_center" style="width:150px;max-width:149px"><%= data[:ip] %></td>
+          <td class="left-border sub_center" style="width:150px;max-width:149px"><%= data[:browser] %></td>
+          <td class="left-right-border sub_center" style="width:68px;max-width:67px"><%= data[:device] %></td>
+        </tr>
+      <% end %>
+  </tbody>
+  </table>
+  
+  <%else%>
+    <div> <p>There are currently no analytics data.</p> </div>
+  <%end%>
+</div>
+
