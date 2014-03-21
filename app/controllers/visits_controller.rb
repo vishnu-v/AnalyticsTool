@@ -9,7 +9,7 @@ def send_to_analytics
 		Visit.create_record(hash)
 	end
 	respond_to do |format|
-    	format.json { render json: "1", :status => :ok}
+    	format.json { head :ok}
   	end
 end
 

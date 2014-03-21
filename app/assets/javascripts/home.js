@@ -10,17 +10,18 @@ var incrementCount = function() {
 
     page = findPage();
     if(page == "dashboard") return;
-    ip = "127.0.0.1";
-    browser = browserDetection();
+    ip = findIP();
+    browser = findBrowser();
+    device = findDevice();
     jQuery.ajax({
             type: "get",
             async: true,
             data: {
-                website_id : 4, // Client website ID needs to be given
+                website_id : 100, // Client website ID needs to be given
                 page : page,
                 ip : ip,
                 browser : browser,
-                device: "Desktop"
+                device: device
             },
             url: 'http://localhost:3000/send_to_analytics',
             success: function(data) {
@@ -38,7 +39,7 @@ var findPage = function() {
     return (file == "") ? "home" : file
 }
 
-function browserDetection() {
+function findBrowser() {
     if (/Firefox[\/\s](\d+\.\d+)/.test(navigator.userAgent)) {
         var ffversion = new Number(RegExp.$1) ; 
         return "Firefox";   
@@ -60,4 +61,14 @@ function browserDetection() {
         var safariversion = new Number(RegExp.$1);
         return "Safari"
     }
+}
+
+var findIP = function() {
+    //javascript external plugin to fetch ip is placed at application.html.erb
+    return client_ip
+}
+
+var findDevice = function() {
+    //Code to find Device to be inserted
+    return "Desktop"
 }
