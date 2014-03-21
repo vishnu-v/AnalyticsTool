@@ -5,7 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Rails3 Bootstrap Devise Cancan" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails3 Bootstrap Devise Cancan" %>">
     <%= stylesheet_link_tag "application", "dashboard", media: "all" %>
-    <%= javascript_include_tag "rails.js", "application", "dashboard", "home" %>
+    <%= javascript_include_tag "application", "dashboard", "home" %>
     <%= csrf_meta_tags %>
     
   </head>

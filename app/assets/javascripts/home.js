@@ -13,16 +13,16 @@ var incrementCount = function() {
     ip = "127.0.0.1";
     browser = browserDetection();
     jQuery.ajax({
-            type: "post",
+            type: "get",
             async: true,
             data: {
-                website_id : 1, // Client website ID needs to be given
+                website_id : 4, // Client website ID needs to be given
                 page : page,
                 ip : ip,
                 browser : browser,
                 device: "Desktop"
             },
-            url: '/send_to_analytics',
+            url: 'http://localhost:3000/send_to_analytics',
             success: function(data) {
             }
         });

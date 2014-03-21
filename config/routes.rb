@@ -11,6 +11,5 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   match 'dashboard' => 'dashboard#index', :as => :dashboard
   match 'pages_list' => 'dashboard#pages_list', :as => :pages_list
   match 'send_to_analytics' => 'visits#send_to_analytics', :as => :send_to_analytics
-  match 'dashboard_data' => 'dashboard#dashboard_data', :as => :dashboard_data
 
 end

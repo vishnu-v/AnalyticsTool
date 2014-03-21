@@ -5,7 +5,7 @@ function populatePages(){
         type: "get",
         async: true,
         data: {
-          website_id : jQuery('#website_id').val()
+          ajax_website_id : jQuery('#website_id').val()
         },
         url: '/dashboard',
         complete: function(data) {

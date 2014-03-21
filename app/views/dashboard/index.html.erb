@@ -1,19 +1,19 @@
 <h3>Dashboard</h3>
 
-<%= form_tag({ :action => 'dashboard_data'}, {:id => "dashboard" }) do %>
+<%= form_tag({ :action => 'index'}, {:id => "dashboard" }) do %>
 
 <div id="sub_report_header">
   <table border="0" class="table_list" style="width:100%;">
     <tbody>
     <th>
       Show Analytics for:<br/>
-      <%=  select_tag :website_id, options_for_website(@website_list), {:onchange=> 'populatePages();',:class => 'select_class', :style=>'width: 100px;height:23px;'} -%>
+      <%=  select_tag :website_id, options_for_website(@website_list), {:onchange=> '',:class => 'select_class', :style=>'width: 100px;height:23px;'} -%>
     </th>
   
     <th>
     	<div class="form_element" id="select_page" style="text-align: center">
       	Page:<br/>
-      	<%=  select_tag :page, options_for_pages(@page_list), {:class =>'select_class', :style=>'width: 110px;height:23px;', :disabled => true } -%>
+      	<%=  select_tag :page, options_for_pages(@page_list), {:class =>'select_class', :style=>'width: 110px;height:23px;', :disabled => false } -%>
        </div>
     </th>
  
@@ -33,8 +33,8 @@
 
 </div>
 
-<div id ="update_sub_report" style="display:none;">
-
+<div id ="update_sub_report">
+  <%= render 'shared/dashboard_data_partial' %>
 </div>
 
 <%end%>
